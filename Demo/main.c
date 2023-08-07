@@ -25,7 +25,12 @@
 #include "st7789_lcd.h"
 
 #include "arm_2d_helper.h"
-#include "arm_2d_scenes.h"
+#include "arm_2d_scene_0.h"
+#include "arm_2d_scene_1.h"
+#include "arm_2d_scene_2.h"
+#include "arm_2d_scene_3.h"
+#include "arm_2d_scene_4.h"
+
 #include "arm_2d_disp_adapters.h"
 
 #ifdef RTE_Acceleration_Arm_2D_Extra_Benchmark

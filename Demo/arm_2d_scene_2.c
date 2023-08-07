@@ -20,7 +20,6 @@
 
 #include "arm_2d.h"
 
-#ifdef RTE_Acceleration_Arm_2D_Scene2
 
 #define __USER_SCENE2_IMPLEMENT__
 #include "arm_2d_scene_2.h"
@@ -542,5 +541,4 @@ user_scene_2_t *__arm_2d_scene2_init(   arm_2d_scene_player_t *ptDispAdapter,
 #   pragma clang diagnostic pop
 #endif
 
-#endif
 

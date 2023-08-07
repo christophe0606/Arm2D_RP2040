@@ -23,7 +23,6 @@
 
 #include "arm_2d.h"
 
-#ifdef RTE_Acceleration_Arm_2D_Scene0
 
 #include "arm_2d_helper_scene.h"
 
@@ -107,4 +106,3 @@ user_scene_0_t *__arm_2d_scene0_init(   arm_2d_scene_player_t *ptDispAdapter,
 
 #endif
 
-#endif
