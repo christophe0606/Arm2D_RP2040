@@ -33,7 +33,7 @@ cd build.tmp
 
 cmake -DARM2D=/ArmSoftware/Arm-2D \
  -DCMSISCORE=/ArmSoftware/CMSIS_5/CMSIS/Core \
- -DCMSIS-DSP=/ArmSoftware/CMSIS-DSP \
+ -DCMSISDSP=/ArmSoftware/CMSIS-DSP \
  -DARM2D_RP2040=/ArmSoftware/Arm2D_RP2040/RP2040 \
  ../Demo
 

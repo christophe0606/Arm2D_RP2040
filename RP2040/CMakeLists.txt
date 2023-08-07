@@ -11,6 +11,7 @@ add_library(arm2d_rp2040
         st7789_lcd.c
         arm_2d_disp_adapter_0.c
         rp2040_hw_acceleration.c
+        arm_2d_misc.c
         )
 
 pico_generate_pio_header(arm2d_rp2040 ${CMAKE_CURRENT_LIST_DIR}/st7789_lcd.pio)
