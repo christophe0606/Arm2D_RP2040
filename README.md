@@ -2,7 +2,7 @@
 
 Adaptation layer for using Arm2D on RP2040.
 
-<img src="/Users/cfavergeon/Documents/Pico/MyPicoProjects/Arm2D_RP2040/Documentation/arm2d_rp2040.jpeg" alt="arm2d_rp2040" style="zoom:67%;" />
+<img src="Documentation/arm2d_rp2040.jpeg" alt="arm2d_rp2040" style="zoom:67%;" />
 
 To get started you'll need:
 
