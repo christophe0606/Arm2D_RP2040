@@ -24,6 +24,8 @@ target_include_directories(ARM2D PUBLIC ${CMAKE_CURRENT_LIST_DIR})
 
 add_subdirectory(${CMSISDSP}/Source bin_dsp)
 target_compile_options(CMSISDSP PRIVATE -Ofast -ffunction-sections -fdata-sections)
+target_compile_options(ARM2D PRIVATE -Ofast -ffunction-sections -fdata-sections)
+
 target_link_libraries(ARM2D PUBLIC CMSISDSP)
 target_link_libraries(CMSISDSP PUBLIC cmsis_core)
 target_link_libraries(arm2d_rp2040 INTERFACE ARM2D)
