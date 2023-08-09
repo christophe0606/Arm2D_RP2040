@@ -51,13 +51,14 @@
 #   define __STATIC_FORCEINLINE static inline __attribute__((always_inline)) 
 #   define __STATIC_INLINE static inline
 #   define __WEAK
-#else
-#   include <stdint.h>
-#   define  __ALIGNED(x) __attribute__((aligned(x)))
-#   define __STATIC_FORCEINLINE static inline __attribute__((always_inline)) 
-#   define __STATIC_INLINE static inline
-#   define __WEAK
+#elif defined (__GNUC_PYTHON__)
+#include <stdint.h>
+#define  __ALIGNED(x) __attribute__((aligned(x)))
+#define __STATIC_FORCEINLINE static inline __attribute__((always_inline)) 
+#define __STATIC_INLINE static inline
+#define __WEAK
 #endif
+
 
 #undef arm_irq_safe
 #define arm_irq_safe

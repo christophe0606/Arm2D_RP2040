@@ -39,6 +39,9 @@ add_executable(arm2d_demo main.c
         MeterPanel.c
         )
 
+# Check weak reference is replaced by strong one
+#target_link_options(arm2d_demo PUBLIC -Wl,-trace-symbol=__arm_2d_impl_rgb565_colour_filling_with_opacity)
+
 option(ARM2D_CONTROLS "" ON)
 option(ARM2D_HELPER "" ON)
 option(ARM2D_LCD_PRINTF "" ON)
