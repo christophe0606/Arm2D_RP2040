@@ -9,11 +9,28 @@
     cfg = interp_default_config();\
     interp_set_config(interp0, 1, &cfg);
 
+__STATIC_INLINE void __unpack(uint16_t hwColor,
+                            __arm_2d_color_fast_rgb_t * ptRGB)
+{
+    /* uses explicit extraction, leading to a more efficient autovectorized code */
+    ptRGB->B = (uint16_t) (hwColor & 0x1F);
+    ptRGB->G = (uint16_t) (hwColor & 0x7E0) ;
+    ptRGB->R = (uint16_t) (hwColor & 0xF800);
+}
+
+__STATIC_INLINE uint16_t __pack(__arm_2d_color_fast_rgb_t * ptRGB)
+{
+    uint16_t result = 
+    (ptRGB->R & 0xF800) | (ptRGB->G & 0x7E0) | (ptRGB->B & 0x1F);
+    
+    return result;
+}
+
 #define PICO_BLENDING(SRC,TARGET,ALPHA) \
   { \
     __arm_2d_color_fast_rgb_t tSrcPix, tTargetPix; \
-    __arm_2d_rgb565_unpack(*(SRC), &tSrcPix); \
-    __arm_2d_rgb565_unpack(*(TARGET), &tTargetPix); \
+    __unpack(*(SRC), &tSrcPix); \
+    __unpack(*(TARGET), &tTargetPix); \
     interp0->accum[1] = (ALPHA); \
      \
     for (int i = 0; i < 3; i++)  \
@@ -23,7 +40,7 @@
         tTargetPix.BGRA[i] = interp0->peek[1] & 0x0FFFF;  \
     } \
  \
-    *(TARGET) = __arm_2d_rgb565_pack(&tTargetPix); \
+    *(TARGET) = __pack(&tTargetPix); \
   }
 
 __OVERRIDE_WEAK
