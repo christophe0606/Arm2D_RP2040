@@ -14,9 +14,11 @@
 #include "st7789_lcd.h"
 #include "st7789_lcd.pio.h"
 
+#include "arm_2d_disp_adapter_0.h"
+
 // Tested with the parts that have the height of 240 and 320
-#define SCREEN_WIDTH 240
-#define SCREEN_HEIGHT 240
+#define SCREEN_WIDTH (__DISP0_CFG_SCEEN_WIDTH__)
+#define SCREEN_HEIGHT (__DISP0_CFG_SCEEN_HEIGHT__)
 #define IMAGE_SIZE 256
 #define LOG_IMAGE_SIZE 8
 
